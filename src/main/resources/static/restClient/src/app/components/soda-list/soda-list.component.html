@@ -1,0 +1,21 @@
+<table class="table table-striped">
+  <thead>
+    <th>Name</th>
+    <th>Calories</th>
+    <th>Brand</th>
+    <th>In Stock</th>
+  </thead>
+    <tbody>
+      <tr *ngFor = 'let soda of sodas'>
+        <td> {{ soda.name }}</td>
+        <td> {{ soda.calories }}</td>
+        <td> {{ soda.brand.brandName }}</td>
+        <td> {{ soda.stock }} </td>
+        <button class="btn btn-warning" (click)="updateSoda(soda)">Edit</button>
+        <button class="btn btn-danger" (click)="deleteSoda(soda)">Delete</button>
+      </tr>
+      <!-- <button class="btn btn-primary" (click)="createSoda()">Add a New Soda</button> -->
+      <hr>
+      <app-soda-brand></app-soda-brand>
+    </tbody>
+</table>
