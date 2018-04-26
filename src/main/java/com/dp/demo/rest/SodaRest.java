@@ -42,7 +42,7 @@ public class SodaRest {
         return resources;
     }
 
-    @RequestMapping(value = "/{sodaId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/sodas/{sodaId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 //    @CrossOrigin(origins="http://localhost:4200", allowedHeaders = "*")
     public Resource<Soda> getById(@PathVariable int sodaId) {
 
@@ -57,8 +57,8 @@ public class SodaRest {
         return sodaService.saveSoda(soda);
     }
 
-    @RequestMapping(value = "/sodas", method = RequestMethod.PUT)
-    public Soda updateSoda(@RequestBody Soda soda) {
+    @RequestMapping(value = "/sodas/{sodaId}", method = RequestMethod.PUT)
+    public Soda updateSoda(@PathVariable int sodaId, @RequestBody Soda soda) {
         return sodaService.saveSoda(soda);
     }
 
